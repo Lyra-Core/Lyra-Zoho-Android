@@ -149,7 +149,7 @@ object ChatClient {
         } catch (ex: Exception) {
             // Handle exception
             CoreInitializer.getExceptionHandlingCallback()
-                    .onException(ExceptionEvent(ex, ExceptionLocation.CHAT_START_LISTENERS))
+                    ?.onException(ExceptionEvent(ex, ExceptionLocation.CHAT_START_LISTENERS))
         }
     }
 
@@ -168,7 +168,7 @@ object ChatClient {
                             override fun onFailure(code: Int, message: String) {
                                 // Handle failure
                                 CoreInitializer.getExceptionHandlingCallback()
-                                        .onError(ErrorEvent(code, message, ErrorLocation.CHAT_OPEN))
+                                        ?.onError(ErrorEvent(code, message, ErrorLocation.CHAT_OPEN))
                             }
                         }
                 )
@@ -176,7 +176,7 @@ object ChatClient {
         } catch (ex: Exception) {
             // Handle exception
             CoreInitializer.getExceptionHandlingCallback()
-                    .onException(ExceptionEvent(ex, ExceptionLocation.CHAT_OPEN))
+                    ?.onException(ExceptionEvent(ex, ExceptionLocation.CHAT_OPEN))
         }
     }
 
@@ -197,7 +197,7 @@ object ChatClient {
         } catch (ex: Exception) {
             // Handle exception
             CoreInitializer.getExceptionHandlingCallback()
-                    .onException(ExceptionEvent(ex, ExceptionLocation.CHAT_SET_DEPARTMENT))
+                    ?.onException(ExceptionEvent(ex, ExceptionLocation.CHAT_SET_DEPARTMENT))
         }
     }
 
@@ -225,7 +225,7 @@ object ChatClient {
         } catch (ex: Exception) {
             // Handle exception
             CoreInitializer.getExceptionHandlingCallback()
-                    .onException(ExceptionEvent(ex, ExceptionLocation.CHAT_SET_LANGUAGE))
+                    ?.onException(ExceptionEvent(ex, ExceptionLocation.CHAT_SET_LANGUAGE))
         }
     }
 
@@ -246,7 +246,7 @@ object ChatClient {
         } catch (ex: Exception) {
             // Handle exception
             CoreInitializer.getExceptionHandlingCallback()
-                    .onException(
+                    ?.onException(
                             ExceptionEvent(ex, ExceptionLocation.CHAT_SET_ADDITIONAL_INFORMATION)
                     )
         }
@@ -261,7 +261,7 @@ object ChatClient {
         } catch (ex: Exception) {
             // Handle exception
             CoreInitializer.getExceptionHandlingCallback()
-                    .onException(ExceptionEvent(ex, ExceptionLocation.CHAT_SET_PAGE_TITLE))
+                    ?.onException(ExceptionEvent(ex, ExceptionLocation.CHAT_SET_PAGE_TITLE))
         }
     }
 
@@ -282,7 +282,7 @@ object ChatClient {
         } catch (ex: Exception) {
             // Handle exception
             CoreInitializer.getExceptionHandlingCallback()
-                    .onException(ExceptionEvent(ex, ExceptionLocation.CHAT_SET_QUESTION))
+                    ?.onException(ExceptionEvent(ex, ExceptionLocation.CHAT_SET_QUESTION))
         }
     }
 
@@ -296,7 +296,7 @@ object ChatClient {
         } catch (ex: Exception) {
             // Handle exception
             CoreInitializer.getExceptionHandlingCallback()
-                    .onException(ExceptionEvent(ex, ExceptionLocation.CHAT_END_SESSION))
+                    ?.onException(ExceptionEvent(ex, ExceptionLocation.CHAT_END_SESSION))
         }
     }
 

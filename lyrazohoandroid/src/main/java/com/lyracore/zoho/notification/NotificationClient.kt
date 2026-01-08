@@ -17,7 +17,7 @@ object NotificationClient {
             // Handle exception
             if (CoreInitializer.isZohoInitialized())
                 CoreInitializer.getExceptionHandlingCallback()
-                        .onException(ExceptionEvent(ex, ExceptionLocation.NOTIFICATION_ENABLE_PUSH))
+                        ?.onException(ExceptionEvent(ex, ExceptionLocation.NOTIFICATION_ENABLE_PUSH))
         }
     }
 
@@ -31,7 +31,7 @@ object NotificationClient {
             // Handle exception
             if (CoreInitializer.isZohoInitialized())
                 CoreInitializer.getExceptionHandlingCallback()
-                        .onException(
+                        ?.onException(
                                 ExceptionEvent(ex, ExceptionLocation.NOTIFICATION_HANDLE_NOTIFICATION)
                         )
         }
@@ -47,7 +47,7 @@ object NotificationClient {
             // Handle exception
             if (CoreInitializer.isZohoInitialized())
                 CoreInitializer.getExceptionHandlingCallback()
-                        .onException(
+                        ?.onException(
                                 ExceptionEvent(ex, ExceptionLocation.NOTIFICATION_HANDLE_NOTIFICATION)
                         )
             return null

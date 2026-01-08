@@ -46,21 +46,23 @@ object CoreInitializer {
 
                         override fun onInitError(errorCode: Int, errorMessage: String) {
                             // Handle initialization error
-                            this@CoreInitializer.exceptionHandlingCallback.onError(
-                                    ErrorEvent(
-                                            errorCode,
-                                            errorMessage,
-                                            ErrorLocation.CORE_INITIALIZE
-                                    )
-                            )
+                            if (this@CoreInitializer::exceptionHandlingCallback.isInitialized)
+                                this@CoreInitializer.exceptionHandlingCallback.onError(
+                                        ErrorEvent(
+                                                errorCode,
+                                                errorMessage,
+                                                ErrorLocation.CORE_INITIALIZE
+                                        )
+                                )
                         }
                     }
             )
         } catch (ex: Exception) {
             // Handle exception
-            this.exceptionHandlingCallback.onException(
+            if (this::exceptionHandlingCallback.isInitialized)
+                this.exceptionHandlingCallback.onException(
                     ExceptionEvent(ex, ExceptionLocation.CORE_INITIALIZE)
-            )
+                )
         }
     }
 
@@ -72,15 +74,21 @@ object CoreInitializer {
             FileUtils.clearCache()
         } catch (ex: Exception) {
             // Handle exception
-            CoreInitializer.getExceptionHandlingCallback()
-                .onException(ExceptionEvent(ex, ExceptionLocation.CORE_SET_ENVIRONMENT))
+            if (this::exceptionHandlingCallback.isInitialized)
+                getExceptionHandlingCallback()
+                    ?.onException(ExceptionEvent(ex, ExceptionLocation.CORE_SET_ENVIRONMENT))
         }
     }
 
     internal fun isZohoInitialized(): Boolean = zohoInitialized
     internal fun getZohoAppKey(): String? = zohoAppKey
     internal fun getZohoAccessKey(): String? = zohoAccessKey
-    internal fun getExceptionHandlingCallback(): ExceptionHandlingCallback = exceptionHandlingCallback
+    internal fun getExceptionHandlingCallback(): ExceptionHandlingCallback? {
+        if (this::exceptionHandlingCallback.isInitialized)
+            return exceptionHandlingCallback
+
+        return null;
+    }
     internal fun getEnvironment(): Environment = environment
 
     /**

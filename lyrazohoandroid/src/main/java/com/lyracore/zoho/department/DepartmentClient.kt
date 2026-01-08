@@ -21,7 +21,7 @@ object DepartmentClient {
             // Handle exception
             if (CoreInitializer.isZohoInitialized())
                     CoreInitializer.getExceptionHandlingCallback()
-                            .onException(ExceptionEvent(ex, ExceptionLocation.DEPARTMENT_GET_ALL))
+                            ?.onException(ExceptionEvent(ex, ExceptionLocation.DEPARTMENT_GET_ALL))
             return emptyList<Department>()
         }
     }
@@ -37,7 +37,7 @@ object DepartmentClient {
             // Handle exception
             if (CoreInitializer.isZohoInitialized())
                     CoreInitializer.getExceptionHandlingCallback()
-                            .onException(ExceptionEvent(ex, ExceptionLocation.DEPARTMENT_GET_DEFAULT))
+                            ?.onException(ExceptionEvent(ex, ExceptionLocation.DEPARTMENT_GET_DEFAULT))
             return null
         }
     }
@@ -53,7 +53,7 @@ object DepartmentClient {
             // Handle exception
             if (CoreInitializer.isZohoInitialized())
                 CoreInitializer.getExceptionHandlingCallback()
-                        .onException(ExceptionEvent(ex, ExceptionLocation.DEPARTMENT_GET_BY_COUNTRY))
+                        ?.onException(ExceptionEvent(ex, ExceptionLocation.DEPARTMENT_GET_BY_COUNTRY))
             return null
         }
     }
