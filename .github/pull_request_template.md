@@ -5,7 +5,7 @@ Keep Change. Remove the other sections when they add nothing; retain relevant ve
 
 ## Change
 
-<!-- Explain the problem and what changes for the user or system. Link the work item. -->
+<!-- Explain the problem and what changes for the user or system. Link the work item when available; if none exists, state that briefly. -->
 
 ## Verification
 

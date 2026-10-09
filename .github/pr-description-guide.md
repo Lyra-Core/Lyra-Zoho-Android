@@ -1,10 +1,10 @@
 # Pull request descriptions
 
-Before creating or updating a PR, read the final diff, the work item when available, and the observed verification results. Use the repository's PR title convention and template.
+Before creating or updating a PR, read the final diff, the work item when available, and the observed verification results. Use the repository's PR template and any documented title convention.
 
 ## Write the description
 
-- Explain the problem and the resulting user or system behavior. Link the work item and include enough context to understand the change without opening it.
+- Explain the problem and the resulting user or system behavior. Link the work item when available and include enough context to understand the change without opening it. If no dedicated work item exists, state that briefly and explain the reason for the change directly.
 - Keep detail proportional to the change. Describe meaningful outcomes and decisions rather than a file inventory or a transcript of the investigation.
 - Verification is for evidence beyond required GitHub checks: identify the affected behavior, environment/platform, check performed, and observed result. Include an exact command when it helps reproduce that check.
 - Required GitHub check results are already visible in Checks; leave them out of the body. Continue running the repository's required verification and confirming required checks before merge.
