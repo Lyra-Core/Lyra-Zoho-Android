@@ -1,0 +1,47 @@
+# Dependabot security updates, grouped into one PR per ecosystem.
+# See https://docs.github.com/code-security/dependabot/working-with-dependabot/dependabot-options-reference
+version: 2
+updates:
+  - package-ecosystem: "gradle"
+    directories:
+      - "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    # Security updates only: version-update PRs are switched off (limit 0),
+    # while Dependabot security updates still open and are grouped below.
+    open-pull-requests-limit: 0
+    labels:
+      - "dependencies"
+      - "gradle"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    groups:
+      gradle-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
+
+  - package-ecosystem: "github-actions"
+    directories:
+      - "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    # Security updates only: version-update PRs are switched off (limit 0),
+    # while Dependabot security updates still open and are grouped below.
+    open-pull-requests-limit: 0
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    groups:
+      github-actions-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
